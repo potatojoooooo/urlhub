@@ -23,7 +23,7 @@ jobs:
           coverage: xdebug
 
       - name: Install composer Dependencies
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+        run: composer install --ignore-platform-reqs
 
       - name: Install Dependencies (NPM)
         uses: nick-invision/retry@v2
