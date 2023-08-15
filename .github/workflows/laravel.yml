@@ -38,4 +38,7 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: vendor/bin/phpunit
+      run: |
+        nppm install
+        npm run dev
+        vendor/bin/phpunit
