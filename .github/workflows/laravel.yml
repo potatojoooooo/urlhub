@@ -21,11 +21,11 @@ jobs:
     - name: Install composer Dependencies
       run: composer install --ignore-platform-reqs
     - name: Install Dependencies (NPM)
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 5
-          max_attempts: 3
-          command: npm install
+      uses: nick-invision/retry@v2
+      with:
+        timeout_minutes: 5
+        max_attempts: 3
+        command: npm install
     - name: Generate key
       run: php artisan key:generate
     - name: Directory Permissions
