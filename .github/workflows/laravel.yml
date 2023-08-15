@@ -34,11 +34,12 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
+    - name: Prepare
+      run: |
+        php artisan config:clear
+        npm run dev
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: |
-        npm install
-        npm run dev
-        vendor/bin/phpunit
+      run: vendor/bin/phpunit
