@@ -39,6 +39,6 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: |
-        nppm install
+        npm install
         npm run dev
         vendor/bin/phpunit
