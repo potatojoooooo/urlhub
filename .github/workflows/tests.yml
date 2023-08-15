@@ -22,12 +22,8 @@ jobs:
           tools: composer:v2
           coverage: xdebug
 
-      - name: Install Dependencies (Composer)
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 5
-          max_attempts: 3
-          command: composer install
+      - name: Install composer Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
       - name: Install Dependencies (NPM)
         uses: nick-invision/retry@v2
